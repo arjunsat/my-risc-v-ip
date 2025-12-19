@@ -252,10 +252,21 @@ As a **memory-mapped peripheral**:
 
 ---
 
-# Optional Confidence Task (Recommended)
+# Optional Confidence Task 
 
 ## Goal
 Modify the output message or a constant, rebuild, rerun, and observe changes.
+ ##  code before mofification
+
+ ##
+ <img width="640" height="319" alt="image" src="https://github.com/user-attachments/assets/79de9ae3-7333-4456-a1ac-474633f95d7e" />
+
+  ##  code after mofification
+
+  <img width="652" height="387" alt="image" src="https://github.com/user-attachments/assets/827868b2-8eda-4cb1-9890-d014aba2f7d4" />
+
+
+  
 
 ### Note (Editor availability)
 If `nano` is missing, use:
