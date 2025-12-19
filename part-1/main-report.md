@@ -82,7 +82,7 @@ log content
 
 
 
-## Step 3: Where the RISC-V Program Is Located
+## Q 1: Where the RISC-V Program Is Located
 
 ### Program Path
 `vsd-riscv2/samples/`
@@ -100,7 +100,7 @@ A simple reference program that computes a sum (1 to N) and prints the result, v
 
 ---
 
-## Step 4: How the Program Was Compiled
+## Q 2: How the Program Was Compiled
 
 From:
 `/workspaces/vsd-riscv2/samples`
@@ -120,7 +120,7 @@ That’s why the output is a full ELF binary.
 
 ---
 
-## Step 5: What the `.o` File Contains (Core Concepts)
+## Q 3: What the `.o` File Contains (Core Concepts)
 
 Even though it’s named `sum1ton.o`, it contains:
 - **ELF header** (metadata about the executable)
@@ -140,7 +140,7 @@ You confirmed this using:
 
 ---
 
-## Step 6: How the Program Was Loaded & Run (Spike + pk)
+## Q 4: How the Program Was Loaded & Run (Spike + pk)
 
 Command used:
 - `spike pk sum1ton.o`
@@ -170,7 +170,7 @@ Then:
 
 ---
 
-## Step 7: Step-2 Completion Status
+##  Completion Status
 
 ✅ **Step 2 is COMPLETE**
 
@@ -181,7 +181,7 @@ You achieved:
 
 ---
 
-## Step 8: Step 3 — Clone and Run VSDFPGA Labs (Mandatory)
+##  Step 3 — Clone and Run VSDFPGA Labs
 
 Repository:
 https://github.com/vsdip/vsdfpga_labs
@@ -199,7 +199,7 @@ Commands used:
 
 ---
 
-## Step 9: VSDFPGA Labs — Firmware Build (No FPGA Hardware)
+##  VSDFPGA Labs — Firmware Build (No FPGA Hardware)
 
 Path:
 `/workspaces/vsdfpga_labs/basicRISCV/Firmware`
@@ -217,7 +217,7 @@ This hex file is used later by FPGA RTL to initialize memory contents.
 
 ---
 
-## Step 10: Why FPGA Build/Flash Was Not Done (Correct Behavior)
+##  Why FPGA Build/Flash Was Not Done (Correct Behavior)
 
 The FPGA build flow would require tools like:
 - `yosys`
@@ -235,7 +235,7 @@ So you correctly stopped at:
 
 ---
 
-## Step 11: Dockerfile Reference Understanding (Local Prep Guidance)
+##  Dockerfile Reference Understanding 
 
 The Dockerfile is a **reference** listing:
 - required packages
@@ -253,8 +253,7 @@ Key takeaways:
 
 ---
 
-# Understanding Check (Mandatory Answers)
-
+# Understanding Check 
 ## 1) Where is the RISC-V program located in vsd-riscv2?
 `/workspaces/vsd-riscv2/samples/sum1ton.c`
 
