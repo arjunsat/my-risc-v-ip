@@ -157,37 +157,25 @@ spike pk sum1ton.o
 The sample program is located at:
 
 bash
-/workspaces/vsd-riscv2/samples/sum1ton.c
+' /workspaces/vsd-riscv2/samples/sum1ton.c '
 
-What it does
-
-Computes a sum and prints the result.
+What it does Computes a sum and prints the result.
 
 Step 2: Compile the program
 
-Command:
-
-riscv64-unknown-elf-gcc -o sum1ton.o sum1ton.c
+Command: riscv64-unknown-elf-gcc -o sum1ton.o sum1ton.c
 
 
 Output:
 
-sum1ton.o (RISC-V ELF executable)
+# sum1ton.o (RISC-V ELF executable)
 
 Step 3: Inspect the binary
 A) Check the file exists + metadata
 ls -l sum1ton.o
 
 
-Shows
-
-file exists
-
-permissions
-
-size
-
-timestamp
+Shows file exists permissionsn size timestamp
 
 ✅ Meaning: proves compilation produced an output file.
 
@@ -195,23 +183,13 @@ B) Check the file type + architecture
 file sum1ton.o
 
 
-We got
-
-ELF executable
-
-RISC-V target
-
-statically linked
-
-debug info present
+We got ELF executable RISC-V target statically linked debug info present
 
 ✅ Meaning: proves it’s a real RISC-V executable binary.
 
 Step 4: Run the binary
 
-Command:
-
-spike pk sum1ton.o
+Command: spike pk sum1ton.o
 
 
 What happens internally
@@ -229,5 +207,142 @@ Sum from 1 to 9 is 45
 
 
 ✅ Meaning: RISC-V execution flow works end-to-end.
+
+
+## Part D — VSDFPGA Labs (What We Did)
+Step 1: Clone the repository
+cd /workspaces
+git clone https://github.com/vsdip/vsdfpga_labs.git
+cd vsdfpga_labs
+
+
+Meaning:
+✅ confirms multi-repository workflow works inside the same Codespace.
+
+Step 2: Build firmware HEX (no FPGA required)
+
+Go to:
+
+/workspaces/vsdfpga_labs/basicRISCV/Firmware
+
+
+Run:
+
+make riscv_logo.bram.hex | tee vsdfpga_firmware_log.txt
+
+What is riscv_logo.bram.hex?
+
+It is a BRAM initialization file (hex words) used to preload the SoC’s BRAM.
+
+Later (in FPGA flow):
+
+RTL loads BRAM contents from this hex file
+
+CPU boots from BRAM
+
+firmware prints the RISC-V logo via UART
+
+Task-1 stops here because flashing needs:
+
+FPGA toolchain
+
+real hardware board access
+
+## Part E — Why We Did NOT Do FPGA Build/Flash
+
+FPGA build typically requires tools like:
+
+yosys, nextpnr-ice40, icetime, icepack
+
+Task-1 rule:
+
+FPGA tools must NOT be installed at this stage.
+
+So we avoided:
+
+make build inside RTL
+
+sudo make flash
+
+make terminal (needs physical serial device)
+
+✅ This is correct for Task-1.
+
+## Part F — Understanding Questions (Answers)
+1) Where is the RISC-V program located?
+
+vsd-riscv2/samples/sum1ton.c
+
+2) How is it compiled and loaded into memory?
+
+compiled using riscv64-unknown-elf-gcc
+
+output is an ELF binary
+
+loaded into simulated memory by pk
+
+executed by spike
+
+3) How does the RISC-V core access memory and MMIO?
+
+normal memory via load/store instructions
+
+peripherals exposed as address ranges (MMIO)
+
+firmware reads/writes MMIO addresses to control devices (UART, timers, etc.)
+
+4) Where would a new FPGA IP block integrate?
+
+As a memory-mapped peripheral in the SoC address map:
+
+add new module in RTL
+
+connect it to bus/interconnect
+
+allocate an MMIO address range
+
+firmware accesses it using loads/stores to that address range
+
+## Part G — Optional Confidence Task (Recommended)
+Why do it?
+
+It proves you understand the edit → rebuild → rerun loop.
+
+Issue: nano not found
+
+Some Codespace images do not include nano by default.
+
+Use vi instead:
+
+cd /workspaces/vsd-riscv2/samples
+vi sum1ton.c
+
+
+Example change:
+
+modify the printed string
+
+or change the loop limit
+
+Then rebuild and rerun:
+
+riscv64-unknown-elf-gcc -o sum1ton.o sum1ton.c
+spike pk sum1ton.o
+
+Completion Checklist
+
+✅ Codespace created and working
+✅ RISC-V toolchain verified
+✅ RISC-V program compiled
+✅ RISC-V program executed successfully in Spike
+✅ vsdfpga_labs cloned
+✅ Firmware hex generated
+✅ FPGA tools avoided (as required)
+
+Notes / Common Issues
+
+If tools “disappear” in a new terminal, it’s usually a PATH / session issue.
+
+In the official Codespace, /opt/riscv/bin is expected to exist and be on PATH.
 
 
