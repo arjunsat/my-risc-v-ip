@@ -268,7 +268,7 @@ make terminal (needs physical serial device)
 
 ✅ This is correct for Task-1.
 
-## Part F — Understanding Questions (Answers)
+## Part F — Understanding Questions 
 1) Where is the RISC-V program located?
 
 vsd-riscv2/samples/sum1ton.c
@@ -303,7 +303,7 @@ allocate an MMIO address range
 
 firmware accesses it using loads/stores to that address range
 
-## Part G — Optional Confidence Task (Recommended)
+## Part G — Optional Confidence Task 
 Why do it?
 
 It proves you understand the edit → rebuild → rerun loop.
