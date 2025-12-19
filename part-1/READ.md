@@ -33,7 +33,7 @@ https://github.com/vsdip/vsd-riscv2
 
 ---
 
-## Step 2: Verify RISC-V Reference Flow (Mandatory)
+## Step 2: Verify RISC-V Reference Flow 
 
 ### Toolchain Verification
 
@@ -54,6 +54,15 @@ Verified the presence and working status of:
 
 **iverilog**
 - Verilog simulator (not required to complete the RISC-V run, but part of the overall dev environment)
+
+- <img width="738" height="124" alt="image" src="https://github.com/user-attachments/assets/b3433843-3c81-4cbd-9084-64d40a75dd15" />
+##
+
+
+<img width="744" height="127" alt="image" src="https://github.com/user-attachments/assets/a8eab1da-6e83-4d31-a6b7-91e546a6d555" />
+
+##
+log content
 
 ---
 
