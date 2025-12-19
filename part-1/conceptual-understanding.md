@@ -1,4 +1,4 @@
-# RISC-V Codespace Bring-Up — From Basics (Explained)
+# RISC-V Codespace Bring-Up — From Basics 
 
 This repository is a **beginner-friendly explanation** of what I did during **Task-1** and *why each step matters*.  
 It explains the **key terms**, **tools**, **files**, and the **full execution flow** in simple language.
@@ -8,7 +8,7 @@ It explains the **key terms**, **tools**, **files**, and the **full execution fl
 
 ---
 
-## What I Did (High-Level Summary)
+## What I Did
 
 1. Opened the **vsd-riscv2** GitHub Codespace (stable prebuilt environment).
 2. Verified important tools exist (`riscv64-unknown-elf-gcc`, `spike`, `pk`).
@@ -101,7 +101,7 @@ So even though the output file ends with **`.o`**, it behaves like a runnable ex
 
 ---
 
-# Part B — Tools Used (Explained)
+# Part B — Tools Used 
 
 ## 1) `riscv64-unknown-elf-gcc` (Compiler)
 
@@ -139,3 +139,95 @@ That’s why we run:
 
 
 spike pk sum1ton.o
+
+
+## 4) `iverilog` (Verilog Simulator)
+
+**Not used directly in Task-1 execution**, but we confirmed it exists.
+
+**Why it matters later**
+- Used to simulate RTL/SoC modules in future tasks.
+
+---
+
+# Part C — What We Ran and Why
+
+## Step 1: Locate the program
+
+The sample program is located at:
+
+bash
+/workspaces/vsd-riscv2/samples/sum1ton.c
+
+What it does
+
+Computes a sum and prints the result.
+
+Step 2: Compile the program
+
+Command:
+
+riscv64-unknown-elf-gcc -o sum1ton.o sum1ton.c
+
+
+Output:
+
+sum1ton.o (RISC-V ELF executable)
+
+Step 3: Inspect the binary
+A) Check the file exists + metadata
+ls -l sum1ton.o
+
+
+Shows
+
+file exists
+
+permissions
+
+size
+
+timestamp
+
+✅ Meaning: proves compilation produced an output file.
+
+B) Check the file type + architecture
+file sum1ton.o
+
+
+We got
+
+ELF executable
+
+RISC-V target
+
+statically linked
+
+debug info present
+
+✅ Meaning: proves it’s a real RISC-V executable binary.
+
+Step 4: Run the binary
+
+Command:
+
+spike pk sum1ton.o
+
+
+What happens internally
+
+pk loads the ELF into simulated RAM
+
+Spike simulates CPU execution
+
+Program prints output via runtime support from pk
+
+Observed output
+
+bbl loader
+Sum from 1 to 9 is 45
+
+
+✅ Meaning: RISC-V execution flow works end-to-end.
+
+
