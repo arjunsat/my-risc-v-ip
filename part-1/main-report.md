@@ -55,7 +55,16 @@ Verified the presence and working status of:
 **iverilog**
 - Verilog simulator (not required to complete the RISC-V run, but part of the overall dev environment)
 
-##proof: RISC-V reference program log (vsd-riscv2)
+
+# Codespace setup
+
+<img width="1682" height="1065" alt="image" src="https://github.com/user-attachments/assets/0356fdd3-ddd4-40be-83f0-cd6e362b5d32" />
+##
+
+<img width="1661" height="1175" alt="image" src="https://github.com/user-attachments/assets/a8763c51-32e1-4c18-8bb4-a42c236cd0fc" />
+
+
+ RISC-V reference program log (vsd-riscv2)
 
 - <img width="738" height="124" alt="image" src="https://github.com/user-attachments/assets/b3433843-3c81-4cbd-9084-64d40a75dd15" />
 ##
