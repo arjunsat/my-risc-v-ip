@@ -16,7 +16,7 @@ This repository documents the complete execution, understanding, and validation 
 
 ---
 
-## Step 1: GitHub Codespace Setup (Mandatory)
+## Step 1: GitHub Codespace Setup 
 
 ### Repository Used
 https://github.com/vsdip/vsd-riscv2
@@ -55,6 +55,8 @@ Verified the presence and working status of:
 **iverilog**
 - Verilog simulator (not required to complete the RISC-V run, but part of the overall dev environment)
 
+##proof: RISC-V reference program log (vsd-riscv2)
+
 - <img width="738" height="124" alt="image" src="https://github.com/user-attachments/assets/b3433843-3c81-4cbd-9084-64d40a75dd15" />
 ##
 
@@ -65,6 +67,20 @@ Verified the presence and working status of:
 log content
 
 ---
+
+<img width="1115" height="173" alt="image" src="https://github.com/user-attachments/assets/31691827-7066-49b6-a5ad-df5b37d7cf17" />
+
+##
+
+<img width="1142" height="773" alt="image" src="https://github.com/user-attachments/assets/7076827a-9bf8-41d9-a685-dfbb53d74826" />
+
+log content
+
+### The code
+
+<img width="910" height="532" alt="image" src="https://github.com/user-attachments/assets/ec4dbe3d-0e7a-4f19-b0cf-cbbf925aa29e" />
+
+
 
 ## Step 3: Where the RISC-V Program Is Located
 
