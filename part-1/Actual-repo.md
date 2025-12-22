@@ -337,6 +337,18 @@ Example approach:
 
 ---
 
+
+## The biard
+
+##
+
+
+
+
+
+<img width="646" height="818" alt="image" src="https://github.com/user-attachments/assets/bd08baf8-e122-454d-b246-467d0b368a23" />
+
+
 # Final Status
 
 ✅ Codespace environment set up  
