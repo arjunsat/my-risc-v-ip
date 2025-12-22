@@ -308,7 +308,8 @@ Modify the output message or a constant, rebuild, rerun, and observe changes.
 
  ##
 
-  <img width="1180" height="1102" alt="image" src="https://github.com/user-attachments/assets/31e79efd-6751-4d53-9a9c-e51ee35be8c0" />
+  <img width="1400" height="1042" alt="image" src="https://github.com/user-attachments/assets/c1bd51e7-3e5a-4e3d-a698-b6bdcddb2f55" />
+
 
   
    ## Customized VSDFPGA RISC-V Firmware Banner  compiled Output
