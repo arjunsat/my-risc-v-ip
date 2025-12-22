@@ -2,6 +2,8 @@
 
 This repository documents the complete execution, understanding, and validation of **Task-1**, which focuses on setting up a stable development environment and successfully running a reference RISC-V design before moving to FPGA or RTL work.
 
+# I set up a cloud-based RISC-V development environment, verified the toolchain by compiling and executing a reference RISC-V program using the Spike simulator, and successfully built FPGA-ready firmware in HEX format using the VSDFPGA lab flow, validating end-to-end software-to-hardware readiness without requiring physical FPGA hardware.
+
 > **Important:** This is **NOT an FPGA programming task**. FPGA tools must **not** be installed or used at this stage.
 
 ---
