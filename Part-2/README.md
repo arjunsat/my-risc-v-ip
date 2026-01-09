@@ -25,8 +25,7 @@ Offset 0x00 → GPIO register
 
 
 
-## Gpio.v
-<img width="1331" height="989" alt="image" src="https://github.com/user-attachments/assets/79604d06-808e-4990-bf6d-5305c5a7b85b" />
+
 
 ## Gpio_ip_task2.v
 <img width="1561" height="1050" alt="image" src="https://github.com/user-attachments/assets/ee13c2ff-ab90-4add-89d7-1e7aa04cb659" />
